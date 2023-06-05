@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Communication Skill Development</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <style>
+    /* Custom styles for the listening test */
+    .listening-container {
+      width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #f5f5f5;
+    }
+    .question {
+      margin-bottom: 10px;
+    }
+    .question label {
+      display: block;
+      font-weight: bold;
+    }
+    .question input[type="radio"] {
+      margin-right: 10px;
+    }
+    .submit-btn {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Communication Skill Development</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="./public/lessons.html">Lessons</a></li>
+        <li><a href="./public/exercises.html">Exercises</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="./public/login.html">Login/SignUp</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- Content of each webpage goes here -->
+    <div class="listening-container">
+      <h2>IELTS Listening Test</h2>
+      <audio src="audio/listening.mp3" controls></audio>
+      <div class="question">
+        <label for="q1">Question 1: What is the capital of France?</label>
+        <input type="radio" name="q1" value="a"> a) London<br>
+        <input type="radio" name="q1" value="b"> b) Paris<br>
+        <input type="radio" name="q1" value="c"> c) Rome<br>
+      </div>
+      <div class="question">
+        <label for="q2">Question 2: How many planets are there in our solar system?</label>
+        <input type="radio" name="q2" value="a"> a) 7<br>
+        <input type="radio" name="q2" value="b"> b) 9<br>
+        <input type="radio" name="q2" value="c"> c) 8<br>
+      </div>
+      <div class="submit-btn">
+        <button onclick="submitTest()">Submit</button>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Communication Skill Development. All rights reserved.</p>
+  </footer>
+  
+  <script src="script.js"></script>
+  <script>
+    function submitTest() {
+      // Retrieve selected answers
+      const answer1 = document.querySelector('input[name="q1"]:checked').value;
+      const answer2 = document.querySelector('input[name="q2"]:checked').value;
+      
+      // Check answers
+      let score = 0;
+      if (answer1 === 'b') {
+        score += 1;
+      }
+      if (answer2 === 'c') {
+        score += 1;
